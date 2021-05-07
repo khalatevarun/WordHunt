@@ -1,5 +1,6 @@
 import React from 'react';
 import './Header.css';
+
 import {
   createMuiTheme,
   MenuItem,
@@ -7,7 +8,9 @@ import {
   ThemeProvider,
 } from '@material-ui/core';
 
-const Header = () => {
+import categories from '../../data/category';
+
+const Header = ({ category, setCategory, word, setWord }) => {
   const darkTheme = createMuiTheme({
     palette: {
       primary: {
@@ -16,19 +19,38 @@ const Header = () => {
       type: 'dark',
     },
   });
+
+  const handleChange = (language) => {
+    setCategory(language);
+    setWord('');
+  };
+
+  console.log('this displays', categories);
+
   return (
     <div className="header">
-      <span className="title">Word Hunt</span>
+      <span className="title">{word ? word : 'Word Hunt'}</span>
       <div className="inputs">
         <ThemeProvider theme={darkTheme}>
-          <TextField id="standard-basic" label="Standard" />
           <TextField
-            id="standard-select-currency"
+            className="search"
+            label="Search a word"
+            value={word}
+            onChange={(e) => setWord(e.target.value)}
+          />
+          <TextField
             select
-            label="Select"
-            helperText="Please select your currency"
+            label="select"
+            id="standard-select-currency"
+            value={category}
+            onChange={(e) => handleChange(e.target.value)}
+            className="select"
           >
-            <MenuItem>English</MenuItem>
+            {categories.map((option) => (
+              <MenuItem key={option.label} value={option.label}>
+                {option.value}
+              </MenuItem>
+            ))}
           </TextField>
         </ThemeProvider>
       </div>
