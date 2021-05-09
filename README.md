@@ -40,7 +40,7 @@ Following is a sneak peek of how the interface looks. To use the website live, h
 
 | Light Mode                               | Dark Mode                             |
 | ------------------------------------ | ------------------------------------ |
-| ![]() | ![]() |
+| ![](https://github.com/khalatevarun/WordHunt/blob/main/screenshots/lightmode.jpg) | ![](https://github.com/khalatevarun/WordHunt/blob/main/screenshots/darkmode.jpg) |
 
 
 
