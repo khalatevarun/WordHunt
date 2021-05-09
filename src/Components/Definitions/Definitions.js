@@ -6,7 +6,12 @@ const Definitions = ({ word, category, meanings }) => {
       {meanings[0] && word && category === 'en' && (
         <audio
           src={meanings[0].phonetics[0] && meanings[0].phonetics[0].audio}
-          style={{ backgroundColor: '#fff', borderRadius: 10 }}
+          style={{
+            backgroundColor: '#fff',
+            borderRadius: 10,
+            height: 50,
+            width: '100%',
+          }}
           controls
         >
           Your browser doesn't support this audio element
@@ -23,7 +28,7 @@ const Definitions = ({ word, category, meanings }) => {
                 style={{ backgroundColor: 'white', color: 'black' }}
               >
                 <b>{def.definition}</b>
-
+                {console.log(meanings)}
                 <hr style={{ backgroundColor: 'black', width: '100%' }} />
                 {def.example && (
                   <span>
@@ -35,7 +40,10 @@ const Definitions = ({ word, category, meanings }) => {
                 {def.synonyms && (
                   <span>
                     <b>
-                      Synonyms : <b>{def.synonyms.map((s) => `${s},`)}</b>
+                      Synonyms :{' '}
+                      <b style={{ overflowWrap: 'break-word' }}>
+                        {def.synonyms.map((s) => `${s},`)}
+                      </b>
                     </b>
                   </span>
                 )}

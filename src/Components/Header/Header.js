@@ -25,8 +25,6 @@ const Header = ({ category, setCategory, word, setWord }) => {
     setWord('');
   };
 
-  console.log('this displays', categories);
-
   return (
     <div className="header">
       <span className="title">{word ? word : 'Word Hunt'}</span>
