@@ -12,7 +12,7 @@ Word Hunt is a fully responsive website where you can find meanings to words in 
 <h2>Features</h2> 
  <ul>
   <li>
-    Find meanings, synonyms and examples of the same for a word in 12 different language.s 
+    Find meanings, synonyms and examples of the same for a word in 12 different languages. 
   </li>
 <li>
     A toggle switch for dark and light mode.
@@ -30,7 +30,7 @@ Word Hunt is a fully responsive website where you can find meanings to words in 
     Material UI
   </li>
   <li>
-    [Dictionary API](https://dictionaryapi.dev/)
+    Dictionary API (https://dictionaryapi.dev/)
   </li>
   </ul>
   
