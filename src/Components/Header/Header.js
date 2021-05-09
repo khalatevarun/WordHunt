@@ -10,13 +10,13 @@ import {
 
 import categories from '../../data/category';
 
-const Header = ({ category, setCategory, word, setWord }) => {
+const Header = ({ category, setCategory, word, setWord, lightMode }) => {
   const darkTheme = createMuiTheme({
     palette: {
       primary: {
-        main: '#ffff',
+        main: lightMode ? '#0000' : '#ffff',
       },
-      type: 'dark',
+      type: lightMode ? 'light' : 'dark',
     },
   });
 

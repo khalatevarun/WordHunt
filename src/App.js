@@ -9,6 +9,7 @@ function App() {
   const [word, setWord] = useState('');
   const [meanings, setMeanings] = useState([]);
   const [category, setCategory] = useState('en');
+  const [lightMode, setLightMode] = useState(false);
 
   const DarkMode = withStyles({
     switchBase: {
@@ -42,25 +43,45 @@ function App() {
   return (
     <div
       className="App"
-      style={{ height: '100vh', backgroundColor: '#1b262c', color: 'white' }}
+      style={{
+        height: '100vh',
+        backgroundColor: lightMode ? '#ffff' : '#1b262c',
+        color: lightMode ? 'black' : 'white',
+        transition: 'all 0.5s linear',
+      }}
     >
       <Container
         maxWidth="md"
-        stlye={{ display: 'flex', flexDirection: 'column', height: '100vh' }}
+        stlye={{
+          display: 'flex',
+          flexDirection: 'column',
+          height: '100vh',
+          justifyContent: 'space-evenly',
+        }}
       >
         <div
           style={{ position: 'absolute', top: 0, right: 15, paddingTop: 10 }}
         >
-          <DarkMode />
+          <span>{lightMode ? 'Light' : 'Dark'} Mode</span>
+          <DarkMode
+            checked={lightMode}
+            onChange={() => setLightMode(!lightMode)}
+          />
         </div>
         <Header
           category={category}
           setCategory={setCategory}
           word={word}
           setWord={setWord}
+          lightMode={lightMode}
         />
         {meanings && (
-          <Definitions word={word} meanings={meanings} category={category} />
+          <Definitions
+            word={word}
+            meanings={meanings}
+            category={category}
+            lightMode={lightMode}
+          />
         )}
       </Container>
     </div>

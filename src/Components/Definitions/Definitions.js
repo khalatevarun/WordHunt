@@ -1,6 +1,6 @@
 import React from 'react';
 import './Defintions.css';
-const Definitions = ({ word, category, meanings }) => {
+const Definitions = ({ word, category, meanings, lightMode }) => {
   return (
     <div className="meanings">
       {meanings[0] && word && category === 'en' && (
@@ -8,7 +8,7 @@ const Definitions = ({ word, category, meanings }) => {
           src={meanings[0].phonetics[0] && meanings[0].phonetics[0].audio}
           style={{
             backgroundColor: '#fff',
-            borderRadius: 10,
+            borderRadius: 25,
             height: 50,
             width: '100%',
           }}
@@ -25,7 +25,10 @@ const Definitions = ({ word, category, meanings }) => {
             item.definitions.map((def) => (
               <div
                 className="singleMean"
-                style={{ backgroundColor: 'white', color: 'black' }}
+                style={{
+                  backgroundColor: lightMode ? '#1b262c' : 'white',
+                  color: lightMode ? 'white' : 'black',
+                }}
               >
                 <b>{def.definition}</b>
                 {console.log(meanings)}
