@@ -36,7 +36,7 @@ Word Hunt is a fully responsive website where you can find meanings to words in 
   
 <h2>  Screenshots </h2>
 
-Following is a sneak peek of how the interface looks. To use the website live, head on over to the [link]()
+Following is a sneak peek of how the interface looks. To use the website live, head on over to the [link](https://wordshunt.netlify.app/)
 
 | Light Mode                               | Dark Mode                             |
 | ------------------------------------ | ------------------------------------ |
